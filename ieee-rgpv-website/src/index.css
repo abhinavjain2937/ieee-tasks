@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-gray-800 overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  /* Underline hover effect for nav links */
+  .nav-underline {
+    position: relative;
+  }
+  .nav-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00629b;
+    transition: width 0.3s ease;
+  }
+  .nav-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Card lift effect on hover */
+  .card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 98, 155, 0.12);
+  }
+
+  /* Left blue border accent for stat cards */
+  .stat-accent {
+    border-left: 4px solid #00629b;
+  }
+}
